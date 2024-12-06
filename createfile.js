@@ -7,7 +7,7 @@ function create_file_option(is_create_file, filepath) {
   if (is_create_file === true) {
     // console.log(fileName)
     file_creater(filepath)
-
+     
   }
   else if (is_create_file === false) {
     console.log("file not created");
@@ -24,7 +24,7 @@ function js_file(filepath) {
     const res=fs.writeFileSync(filepath,
       `const {cl}=require('cl-print');`
     )
-    process.exit(0);
+ 
   
   } catch (error) {
     console.log(error)
@@ -48,7 +48,8 @@ entered_file_path=fileName;
       already_creating_option(create_file_option, filepath);
     }
     else {
-      file_creater(filepath)
+      file_creater(filepath);
+     
     }
   } else {
     console.log('please specify a file name');
@@ -69,12 +70,15 @@ function file_creater(fileName) {
   if (fileName.endsWith('.ts') || fileName.endsWith('.js')) {
     // create_folder(entered_file_path)
     js_file(fileName);
-   
-    console.log('js file');
+    console.log(path.basename(filepath),'is created successfully :)')
+    process.exit(0);
+    // console.log('js file');
   }
   else {
-    console.log('non js file');
+  
     non_js_file(fileName)
+    console.log(path.basename(filepath),'is created successfully :)')
+    process.exit(0);
   }
 }
 

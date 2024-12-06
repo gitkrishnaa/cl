@@ -14,7 +14,7 @@ module.exports.cl_readLine = rl
 const args = process.argv.slice(2);
 const currentDir = process.cwd();
 // Get all folders in the current directory
-console.log(args)
+// console.log(args)
 
 function already_creating_option(create_file,fileName) {
   let is_create = false;
@@ -45,7 +45,8 @@ function already_creating_option(create_file,fileName) {
 
 
 if (args.includes("help")) {
-  console.log(createfile())
+  // console.log(createfile())
+  console.log('please read our documentation')
 }
 if (args.includes("test")) {
   console.log("Welcome to the CLI tool!");
@@ -86,7 +87,7 @@ if (args.includes("test")) {
 if (args[0] == "create" || args[0] == "cr") {
   const fileName = args[1];
   // createfile(fileName, currentDir);
-
+  
   if (fileName) {
     createfile.create_file(fileName, currentDir, already_creating_option);
   }
