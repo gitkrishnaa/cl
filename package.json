@@ -1,12 +1,15 @@
 {
   "name": "cl-print",
-  "version": "1.0.8",
+  "version": "1.1.8",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "cl": "./cl.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-"keywords": [
+  "keywords": [
     "console.log",
     "debugging",
     "log",
@@ -26,7 +29,7 @@
   "dependencies": {
     "colors": "^1.4.0",
     "get-random-data": "^1.0.4",
+    "inquirer": "^12.1.0",
     "javascript-obfuscator": "^4.1.1"
   }
-
 }
