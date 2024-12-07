@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const createfile = require("./createfile");
-const { option_test } = require("./options");
 const readline = require("readline");
 
 const rl = readline.createInterface({
@@ -16,17 +15,17 @@ const currentDir = process.cwd();
 // Get all folders in the current directory
 // console.log(args)
 
-function already_creating_option(create_file,fileName) {
+function already_creating_option(create_file, fileName) {
   let is_create = false;
   rl.question("Overwrite existing file (y/n): ", (option) => {
 
     const formatted_option = option.toLowerCase();
     if (formatted_option == "yes" || formatted_option == 'y') {
-      create_file(true,fileName,currentDir)
+      create_file(true, fileName, currentDir)
       rl.close();
     }
     else if (formatted_option == "no" || formatted_option == "n") {
-      create_file(false,fileName,currentDir)
+      create_file(false, fileName, currentDir)
       rl.close();
     }
     else {
@@ -47,9 +46,10 @@ function already_creating_option(create_file,fileName) {
 if (args.includes("help")) {
   // console.log(createfile())
   console.log('please read our documentation')
+  process.exit(0);
 }
-if (args.includes("test")) {
-  console.log("Welcome to the CLI tool!");
+else if (args.includes("test")) {
+ 
   console.log("Options:");
   console.log("1. Create a file");
   console.log("2. Display help");
@@ -84,10 +84,10 @@ if (args.includes("test")) {
     }
   });
 }
-if (args[0] == "create" || args[0] == "cr") {
+else if (args[0] == "create" || args[0] == "cr") {
   const fileName = args[1];
   // createfile(fileName, currentDir);
-  
+
   if (fileName) {
     createfile.create_file(fileName, currentDir, already_creating_option);
   }
@@ -96,6 +96,12 @@ if (args[0] == "create" || args[0] == "cr") {
   }
 }
 
-// else{
-//     console.log('please use correct')
-// }
+else{
+    console.log(`please use correct one of the following
+      cl create filename.js
+      cl cr filename.js
+      cl help 
+      
+      
+      `)
+}

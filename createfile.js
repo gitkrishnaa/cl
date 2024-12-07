@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-// const { cl_readLine } = require('./cl');
+
 let entered_file_path=""
 function create_file_option(is_create_file, filepath) {
   // console.log(fileName)
@@ -31,8 +31,7 @@ function js_file(filepath) {
   }
 }
 function non_js_file(filename) {
-  const res=fs.writeFileSync(filepath,``
-  )
+  fs.writeFileSync(filename,``)
 }
 module.exports.create_file = function (fileName, currentDir, already_creating_option) {
   //  console.log(path.relative(fileName))
@@ -70,14 +69,14 @@ function file_creater(fileName) {
   if (fileName.endsWith('.ts') || fileName.endsWith('.js')) {
     // create_folder(entered_file_path)
     js_file(fileName);
-    console.log(path.basename(filepath),'is created successfully :)')
+    console.log(path.basename(fileName),'is created successfully :)')
     process.exit(0);
     // console.log('js file');
   }
   else {
   
     non_js_file(fileName)
-    console.log(path.basename(filepath),'is created successfully :)')
+    console.log(path.basename(fileName),'is created successfully :)')
     process.exit(0);
   }
 }
