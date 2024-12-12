@@ -11,7 +11,7 @@ function logLocation(...data) {
   const lines=path.basename(stackLine).split(':');
   const file_path=path.resolve(stackLine);
 
-  console.log(location_printable(file_path,lines[0], lines[1]).dim, data ? console.log(...data) : "");
+  console.log(location_printable(file_path,lines[0], lines[1]).dim, ...data);
  
 
 }
