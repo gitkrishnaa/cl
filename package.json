@@ -1,6 +1,6 @@
 {
   "name": "cl-print",
-  "version": "2.2.5",
+  "version": "2.3.1",
   "description": "",
   "main": "index.js",
   "bin": {

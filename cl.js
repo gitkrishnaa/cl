@@ -84,7 +84,7 @@ else if (args.includes("test")) {
     }
   });
 }
-else if (args[0] == "create" || args[0] == "cr") {
+else if (args[0].toLowerCase() == "create" || args[0].toLowerCase() == "cr" || args[0].toLowerCase() == "add") {
   const fileName = args[1];
   // createfile(fileName, currentDir);
 
@@ -98,8 +98,9 @@ else if (args[0] == "create" || args[0] == "cr") {
 
 else{
     console.log(`please use correct one of the following
-      cl create filename.js
-      cl cr filename.js
+      cl add filename.js    -> create file
+      cl create filename.js -> create file
+      cl cr filename.js     -> short of crete to cr for create file
       cl help 
       
       
