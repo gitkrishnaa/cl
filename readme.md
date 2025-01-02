@@ -32,7 +32,7 @@ Once installed, just require or import the package and use it like you would use
 ### Example
 
 ```javascript
-const cl = require('cl-print');
+const {cl} = require('cl-print');
 
 cl('Hello, World!'); 
 // Output: [xyz.js:15] Hello, World!
@@ -47,7 +47,7 @@ In this example, the log message will display the filename (`xyz.js`) and the li
 Suppose you have a file `app.js` with the following code:
 
 ```javascript
-const cl = require('cl-print');
+const (cl} = require('cl-print');
 
 function greet() {
   cl('Hello, this is a test log!');
@@ -78,7 +78,7 @@ As you can see, it includes the filename (`app.js`) and the line number (`4`), m
 ## 🎉 Quick Start
 
 ```javascript
-const clPrint = require('cl-print');
+const {cl} = require('cl-print');
 
 // Using it like console.log, but with filename and line number
 cl('This is a log with context!');
