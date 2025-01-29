@@ -47,7 +47,7 @@ In this example, the log message will display the filename (`xyz.js`) and the li
 Suppose you have a file `app.js` with the following code:
 
 ```javascript
-const (cl} = require('cl-print');
+const {cl} = require('cl-print');
 
 function greet() {
   cl('Hello, this is a test log!');
